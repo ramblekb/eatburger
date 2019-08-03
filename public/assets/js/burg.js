@@ -5,7 +5,7 @@ $(function() {
       var newRare = $(this).data("newRare");
   
       var newRareState = {
-        rarey: newRare
+        rare: newRare
       };
   
       // Send the PUT request.
@@ -27,7 +27,7 @@ $(function() {
   
       var newBurger = {
         name: $("#ca").val().trim(),
-        rarey: $("[name=rare]:checked").val().trim()
+        rare: $("[name=rare]:checked").val().trim()
       };
   
       // Send the POST request.
