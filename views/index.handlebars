@@ -2,23 +2,16 @@
 
 <h2>burgers that are not rare!</h2>
 
+​
 <ul>
   {{#each burgers}}
-    {{#unless rare}}
-      {{> burgers/burger-block rare=true}}
+    {{#unless devoured}}
+      {{> burgers/burger-block devoured=false}}
     {{/unless}}
   {{/each}}
 </ul>
 
 <h2>burgers that are rare!</h2>
-
-<ul>
-  {{#each burgers}}
-    {{#if rare}}
-      {{> burgers/burger-block rare=false}}
-    {{/if}}
-  {{/each}}
-</ul>
 
 <h2>Add a burger</h2>
 <form class="create-form">
@@ -29,9 +22,9 @@
   </div>
 
   <div class="form-group">
-    <label for="rarey">rare?</label><br>
-    <input type="radio" name="rare" value="1" checked> rare!<br>
-    <input type="radio" name="rare" value="0"> Done
+    <label for="rare">Devoured?</label><br>
+    <input type="radio" name="devoured" value="1" checked>!<br>
+    <input type="radio" name="devoured" value="0"> Done
   </div>
 
   <button type="submit">Add burger</button>
