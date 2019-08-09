@@ -2,4 +2,4 @@
 USE burger;
 -- Insert new rows of data.
 INSERT INTO burgers (burger_name, devoured)
-VALUES ("Impossible Burger", false), ("Fried Chicken Sandwich", false), ("Turkey burger", false);
+VALUES ("Impossible Burger", false), ("Fried Chicken Sandwich", false), ("Turkey Burger", false);

@@ -1,20 +1,39 @@
-li {
-    padding: 5px;
-    margin: 5px;
-    background: #faebd7;
-  }
-  
-  .label {
-    font-weight: bold;
-  }
-  
-  .create-update-form {
-    padding: 5px;
-    margin: 5px;
-    background: aqua;
-  }
-  
-  .form-group {
-    margin-bottom: 5px;
-  }
-  
+/*Changing the background color*/
+body {
+	background: #29abe0;
+}
+
+/*Formatting the burger img*/
+#burger-img {
+	max-width: 200px;
+	margin-top: 20px;
+}
+
+
+/*Applying Google fonts*/
+#burger-h {
+	font-family: 'Times New Roman', cursive;
+	font-size: 60px;
+}
+
+.burger-text {
+	font-family: 'Love Ya Like A Sister', cursive;
+}
+
+.burger-btn {
+	font-family: 'Rock Salt', cursive;
+}
+
+
+/*"Muting" the devoured burgers*/
+#devoured-text {
+	color: #98978b;
+	background-color: #f8f5f0
+}
+
+
+/*Formatting the divs holding burger lists*/
+.uneaten-list, .eaten-list {
+	max-height: 300px;
+	overflow-y:auto;
+}

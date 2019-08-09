@@ -1,41 +1,42 @@
 var express = require("express");
-
 var router = express.Router();
 
-// Import the model (burger.js) to use its database functions.
-var burger = require("../config/orm");
+// Importing the model (burger.js) to use its database functions
+var burger = require("../models/burger.js");
 
-// Create all our routes and set up logic within those routes where required.
-router.get("/api/burg", function(req, res) {
-  burger.all("burgers", function(data) {
-    console.log(data);
-    res.json(data);
-  });
+// Creating the router for the app
+router.get("/", function(req, res) {
+	// Pulling all of the burger data
+	burger.selectAll(function(data) {
+		var burgerObj = {
+			burger: data
+		};
+		console.log(burgerObj);
+		// Rendering the data for use in the index.handlebars file
+		res.render("index", burgerObj);
+	});
 });
 
-router.post("/api/burg", function(req, res) {
-  burger.create(req.body.burger_name, function(response){
-    console.log(response);
-    res.status(201).json(response);
-  });
+router.post("/", function(req, res) {
+	// Adding the user-inputed burger to the database
+	burger.insertOne(
+	    ["burger_name"], [req.body.burger_name], function() {
+	    // Redirecting to the home page so that the newly added burger is displayed
+	    res.redirect("/");
+  	});
 });
 
-router.put("/api/burg/:id", function(req, res) {
-  burger.update(req.params.id, function(response) {
-    console.log(response);
-    res.status(200).json(response);
-  
-  });
-  });
+router.put("/:id", function(req, res) {
+	// Updating the burger that the user "devours"
+	var condition = "id = " + req.params.id;
+	console.log("condition", condition);
 
-  router.get("/", function(req, res){
-    burger.all ("burgers", function(data){
-      var burgersObject ={
-        burgers: data
-      }
-    
-    res.render("index", burgersObject)
-    })  
-  })
-// Export routes for server.js to use.
+	burger.updateOne({
+		devoured: req.body.devoured
+	}, condition, function() {
+		res.redirect("/");
+	});
+});
+
+// Exporting the router
 module.exports = router;

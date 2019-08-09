@@ -7,6 +7,6 @@ select * from burger;
 CREATE TABLE Burgers(
 id int NOT NULL auto_increment,
 burger_name varchar(225),
-devoured bool,
+devoured boolean,
 PRIMARY KEY(id)
 )
