@@ -12,16 +12,16 @@ body {
 
 /*Applying Google fonts*/
 #burger-h {
-	font-family: 'Times New Roman', cursive;
+	font-family: 'Courier New', Courier, monospace;
 	font-size: 60px;
 }
 
 .burger-text {
-	font-family: 'Love Ya Like A Sister', cursive;
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .burger-btn {
-	font-family: 'Rock Salt', cursive;
+	font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 
